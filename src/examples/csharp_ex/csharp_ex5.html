@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>C# Example: Arrays</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/examples/index.css">
+    </head>
+    <body>
+        <!-- Main Header -->
+        <h1>
+            <!-- Dark Mode -->
+            <div class="custom-select" style="width:200px;">
+                <select id="selTheme">
+                    <option value="null">--Choose a theme--</option>
+                    <option value="light">Light Mode</option>
+                    <option value="dark">Dark Mode</option>
+                </select>
+            </div>
+
+            <img src="/images/computer_code1.png" alt="logo" width="200" height="200">
+            <br>Top Programming Languages of 2022
+            <section id="Projects1"></section>
+            
+            <!-- The primary navigation of the site -->
+            <section>
+                <div>
+                    <ul id="navbar">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/examples/index.html">Examples</a></li>
+                        <li><a href="/resources/index.html">Resources</a></li>
+                    </ul>
+                </div>
+            </section>
+        </h1>
+        <h4>C#: Array Examples</h4>
+
+        <!-- Example(s) -->
+        <h2>Example #1: One Dimensional Array</h2>
+        <img src="/examples/csharp_ex/array1_csharp.png" alt="logo" width="750" height="600">
+
+        <h2><br><br>Example #2: Two Dimensional Array</h2>
+        <img src="/examples/csharp_ex/array2_csharp.png" alt="logo" width="750" height="650">
+
+                <!-- Theme javascript code -->
+        <script>
+            function applyTheme(theme){
+                document.body.classList.remove("theme-light", "theme-dark");
+                document.body.classList.add(`theme-${theme}`);
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const savedTheme = localStorage.getItem("theme") || "null";
+
+                applyTheme(savedTheme);
+
+                for(const optionElement of document.querySelectorAll("#selTheme option")){
+                    optionElement.selected = savedTheme === optionElement.value;
+                }
+
+                document.querySelector("#selTheme").addEventListener("change", function(){
+                    localStorage.setItem("theme", this.value);
+                    applyTheme(this.value);
+                });
+            });
+        </script>
+
+        <!-- Copyright -->
+        <footer>
+            <br><br><br>
+            <p><small>
+                All content copyright &copy; 2022, Luis Plaza
+            </small></p>
+        </footer>
+       
+        <script src="" async defer></script>
+    </body>
+</html>
